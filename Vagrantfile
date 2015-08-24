@@ -1,0 +1,10 @@
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+
+  # avoid possible request "vagrant@127.0.0.1's password:" when "up" and "ssh"
+  config.ssh.password = "vagrant"
+
+  config.vm.provision :shell, :path => "vagrant-provision.sh"
+
+end
